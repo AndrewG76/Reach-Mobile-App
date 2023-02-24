@@ -96,14 +96,25 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'You have pushed the button this many times:',
+              'Push the button to increment the counter:',
+              style: TextStyle(
+                fontSize: 40, color: Colors.green
+              ),
             ),
             Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+              'Current Click: $_counter',
+              style: TextStyle(fontStyle: FontStyle.italic),
             ),
+            Text(
+              'Going up by 2: ${_counter * 2}',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            )
           ],
         ),
+      ),
+      bottomNavigationBar: BottomAppBar(
+        shape: const CircularNotchedRectangle(),
+        child: Container(height: 50.0),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
