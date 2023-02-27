@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'registrationScreen.dart';
+import 'homeScreen.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -7,7 +9,7 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Login Screen',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -20,7 +22,7 @@ class LoginScreen extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Login Screen'),
     );
   }
 }
@@ -44,18 +46,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -92,30 +82,45 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'Push the button to increment the counter:',
+              'Username',
               style: TextStyle(
                   fontSize: 40, color: Colors.green
               ),
             ),
             Text(
-              'Current Click: $_counter',
+              'Password',
               style: TextStyle(fontStyle: FontStyle.italic),
             ),
-            Text(
-              'Going up by 2: ${_counter * 2}',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            )
+            TextButton(
+              onPressed: () {
+                print('the password button was pressed');
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomeScreen())
+                );
+              },
+              child: Text(
+                'Log In',
+              ),
+            ),
+            TextButton(
+              onPressed: () {
+                print('the register button was pressed');
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => RegistrationScreen())
+                );
+              },
+              child: Text(
+                'Register',
+              ),
+            ),
           ],
         ),
       ),
       bottomNavigationBar: BottomAppBar(
         shape: const CircularNotchedRectangle(),
         child: Container(height: 50.0),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
