@@ -82,14 +82,24 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'Username',
+              'Welcome Back!',
               style: TextStyle(
                   fontSize: 40, color: Colors.green
               ),
             ),
-            Text(
-              'Password',
-              style: TextStyle(fontStyle: FontStyle.italic),
+            const TextField(
+              obscureText: true,
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: 'Username',
+              ),
+            ),
+            const TextField(
+              obscureText: true,
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: 'Password',
+              ),
             ),
             TextButton(
               onPressed: () {
@@ -113,6 +123,14 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               child: Text(
                 'Register',
+              ),
+            ),
+            TextButton(
+              onPressed: () {
+                print('the forgot password was pressed');
+              },
+              child: Text(
+                'Forgot Password?',
               ),
             ),
           ],

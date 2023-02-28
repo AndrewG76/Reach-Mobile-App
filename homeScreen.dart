@@ -44,18 +44,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -90,33 +78,13 @@ class _MyHomePageState extends State<MyHomePage> {
           // axis because Columns are vertical (the cross axis would be
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'Push the button to increment the counter:',
-              style: TextStyle(
-                  fontSize: 40, color: Colors.green
-              ),
-            ),
-            Text(
-              'Current Click: $_counter',
-              style: TextStyle(fontStyle: FontStyle.italic),
-            ),
-            Text(
-              'Going up by 2: ${_counter * 2}',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            )
-          ],
         ),
       ),
       bottomNavigationBar: BottomAppBar(
         shape: const CircularNotchedRectangle(),
         child: Container(height: 50.0),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+ // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }

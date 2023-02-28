@@ -92,30 +92,39 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'Push the button to increment the counter:',
+              'New User',
               style: TextStyle(
                   fontSize: 40, color: Colors.green
               ),
             ),
-            Text(
-              'Current Click: $_counter',
-              style: TextStyle(fontStyle: FontStyle.italic),
+            const TextField(
+              obscureText: true,
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: 'Username',
+              ),
             ),
-            Text(
-              'Going up by 2: ${_counter * 2}',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            )
+            const TextField(
+              obscureText: true,
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: 'Password',
+              ),
+            ),
+            TextButton(
+              onPressed: () {
+                print('the register button was pressed');
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => RegistrationScreen())
+                );
+              },
+              child: Text(
+                'Register',
+              ),
+            ),
           ],
         ),
-      ),
-      bottomNavigationBar: BottomAppBar(
-        shape: const CircularNotchedRectangle(),
-        child: Container(height: 50.0),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
