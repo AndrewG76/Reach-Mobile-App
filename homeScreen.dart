@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:reach/glossaryScreen.dart';
+import 'Exercises/Exercise.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -18,9 +20,9 @@ class HomeScreen extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.grey,
       ),
-      home: const MyHomePage(title: 'Home Screen'),
+      home: const MyHomePage(title: 'Home'),
     );
   }
 }
@@ -54,6 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
+      backgroundColor: Colors.black,
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
@@ -78,6 +81,18 @@ class _MyHomePageState extends State<MyHomePage> {
           // axis because Columns are vertical (the cross axis would be
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            TextButton(
+              onPressed: (){
+                Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => GlossaryScreen())
+                );
+              },
+              child: Text(
+                'Glossary',
+              ),
+            )
+          ]
         ),
       ),
       bottomNavigationBar: BottomAppBar(

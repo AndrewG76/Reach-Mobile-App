@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'loginScreen.dart';
+import 'homeScreen.dart';
 
 //testing
 void main() {
@@ -57,8 +57,8 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState(){
     super.initState();
     Timer(
-      Duration(seconds: 5),
-        ()=>Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (BuildContext context)=>LoginScreen()))
+      Duration(seconds: 1),
+        ()=>Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (BuildContext context)=>HomeScreen()))
     );
   }
 

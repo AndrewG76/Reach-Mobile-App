@@ -87,24 +87,18 @@ class _MyHomePageState extends State<MyHomePage> {
                   fontSize: 40, color: Colors.green
               ),
             ),
-            Container(
-              margin: EdgeInsets.all(10),
-              child: TextField(
-                obscureText: true,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Username',
-                ),
+            const TextField(
+              obscureText: true,
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: 'Username',
               ),
             ),
-            Container(
-              margin: EdgeInsets.all(10),
-              child: TextField(
-                obscureText: true,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Password',
-                ),
+            const TextField(
+              obscureText: true,
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: 'Password',
               ),
             ),
             TextButton(
