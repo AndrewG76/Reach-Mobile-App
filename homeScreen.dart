@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:reach/glossaryScreen.dart';
+import 'package:reach/quizScreen.dart';
 import 'Exercises/Exercise.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -23,6 +24,7 @@ class HomeScreen extends StatelessWidget {
         primarySwatch: Colors.grey,
       ),
       home: const MyHomePage(title: 'Home'),
+
     );
   }
 }
@@ -85,13 +87,23 @@ class _MyHomePageState extends State<MyHomePage> {
             TextButton(
               onPressed: (){
                 Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => QuizScreen())
+                );
+              },
+              child: Text(
+                'Build Routine',
+              ),
+            ),
+            TextButton(
+              onPressed: (){
+                Navigator.push(
                   context, MaterialPageRoute(builder: (context) => GlossaryScreen())
                 );
               },
               child: Text(
                 'Glossary',
               ),
-            )
+            ),
           ]
         ),
       ),

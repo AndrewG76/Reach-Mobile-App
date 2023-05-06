@@ -28,6 +28,7 @@ class ExerciseDetailsScreen extends StatelessWidget{
       backgroundColor: Colors.black,
       appBar: AppBar(
         title: Text(exercise.title),
+        centerTitle: true,
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
