@@ -37,29 +37,40 @@ class _QuizScreenState extends State<QuizScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Quiz'),
+        title: Text('Select Sore Muscle Groups'),
       ),
-      body: Column(
-        children: [
-          Expanded(
-            child: ListView.builder(
-              itemCount: _quizOptions.length,
-              itemBuilder: (BuildContext context, int index) {
-                String quizOption = _quizOptions[index];
-                bool isSelected = _selectedQuizOptions.contains(quizOption);
-                return ListTile(
-                  title: Text(quizOption),
-                  trailing: isSelected ? Icon(Icons.check_box) : Icon(Icons.check_box_outline_blank),
-                  onTap: () => _handleQuizOption(quizOption),
-                );
-              },
+      body: Container(
+        decoration: BoxDecoration(
+          color: Colors.black,
+        ),
+        child: Column(
+          children: [
+            Expanded(
+              child: ListView.builder(
+                itemCount: _quizOptions.length,
+                itemBuilder: (BuildContext context, int index) {
+                  String quizOption = _quizOptions[index];
+                  bool isSelected = _selectedQuizOptions.contains(quizOption);
+                  return ListTile(
+                    title: Text(
+                      quizOption,
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                    ),
+                    trailing: isSelected ? Icon(Icons.check_box, color: Colors.white) : Icon(Icons.check_box_outline_blank, color: Colors.white),
+                    onTap: () => _handleQuizOption(quizOption),
+                  );
+                },
+              ),
             ),
-          ),
-          ElevatedButton(
-            child: Text('Submit'),
-            onPressed: _shouldEnableSubmitButton() ? _handleSubmitButton : null,
-          ),
-        ],
+            ElevatedButton(
+              child: Text('Submit', style: TextStyle(color: Colors.white)),
+              style: ElevatedButton.styleFrom(primary: Colors.grey),
+              onPressed: _shouldEnableSubmitButton() ? _handleSubmitButton : null,
+            ),
+          ],
+        ),
       ),
     );
   }

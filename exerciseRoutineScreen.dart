@@ -40,15 +40,15 @@ class _ExerciseRoutineScreenState extends State<ExerciseRoutineScreen> {
     });
   }
 
-  void _nextExercise() {
+  void _nextExercise() async {
     setState(() {
       _currentIndex++;
     });
 
     print('Current index: $_currentIndex');
 
-    if (_currentIndex == _exercises.length) {
-      showDialog(
+    if (_currentIndex == _exercises.length - 1) {
+      await showDialog(
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
@@ -68,6 +68,8 @@ class _ExerciseRoutineScreenState extends State<ExerciseRoutineScreen> {
       );
     }
   }
+
+
 
   void _previousExercise() {
     setState(() {

@@ -34,7 +34,7 @@ class _GlossaryScreenState extends State<GlossaryScreen> {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
-        title: Text('Exercises'),
+        title: Text('All Exercises'),
         actions: [
           IconButton(
             icon: Icon(Icons.clear),
@@ -51,7 +51,7 @@ class _GlossaryScreenState extends State<GlossaryScreen> {
             child: TextField(
               controller: _searchController,
               decoration: InputDecoration(
-                hintText: 'Search exercises by name or muscle group',
+                hintText: 'Search exercises by muscle name or muscle group',
                 filled: true,
                 fillColor: Colors.white,
                 border: OutlineInputBorder(
