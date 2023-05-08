@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:reach/Exercises/Exercise.dart';
 import 'package:reach/exerciseDetailsScreen.dart';
 
+import 'homeScreen.dart';
+
 class ExerciseRoutineScreen extends StatefulWidget {
   final List<String> selectedQuizOptions;
 
@@ -47,7 +49,7 @@ class _ExerciseRoutineScreenState extends State<ExerciseRoutineScreen> {
 
     print('Current index: $_currentIndex');
 
-    if (_currentIndex == _exercises.length - 1) {
+    if (_currentIndex == _exercises.length) {
       await showDialog(
         context: context,
         builder: (BuildContext context) {
@@ -132,8 +134,32 @@ class _ExerciseRoutineScreenState extends State<ExerciseRoutineScreen> {
                   onPressed: _currentIndex == 0 ? null : _previousExercise,
                 ),
                 ElevatedButton(
-                  child: Text('Next Exercise'),
-                  onPressed: _currentIndex == _exercises.length - 1 ? null : _nextExercise,
+                  child: _currentIndex == _exercises.length - 1 ? Text('Complete Routine') : Text('Next Exercise'),
+                  onPressed: _currentIndex == _exercises.length - 1 ? () async {
+                    await showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return AlertDialog(
+                          title: Text('Congratulations!'),
+                          content: Text('You completed your exercise routine.'),
+                          actions: [
+                            TextButton(
+                              child: Text('OK'),
+                              onPressed: () {
+                                Navigator.pop(context);
+                                Navigator.pop(context);
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => HomeScreen()),
+                                );
+                              },
+
+                            ),
+                          ],
+                        );
+                      },
+                    );
+                  } : _nextExercise,
                 ),
               ],
             ),
