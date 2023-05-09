@@ -12,4 +12,4 @@ Welcome to the app "Reach!" Regarding how I came up with this idea, I would esse
 In this app, users will be able to take a quiz asking them about what parts of their body are sore and provide them a generated routine of what stretches they should do to remedy the issue. As they go throughout the routine, users will be able cycle through which formation they need to utilize and click on a details page for each exercise to look at any in-depth explanations on how to perform it. There is a video accompanied by a text-based description to follow through for maximum efficiacy in tutorial demonstrations. Additionally, there is a Glossary page where if users want to refer and flip to whatever muscle they are interested about, they can read up on the information directly.
 
 # 3. Google Play Store Download
-Coming soon!
+https://play.google.com/store/apps/details?id=com.gravinoandrew.reach
